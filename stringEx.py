@@ -9,4 +9,5 @@ c = a + b
 print(type(c))
 c = str (c)
 print(type(c))
+print(c)
 
