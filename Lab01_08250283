@@ -1,0 +1,54 @@
+# create an empty list to store students name
+students_list = []
+# craete an empty dictionary to store students details
+students_dict = {}
+
+
+# Prompting user to input name,age,grade
+name = str(input("Enter student name: "))
+age = int(input("Enter student age: "))
+grade = int(input("Enter student grade: "))
+
+
+#Adding student name as list
+students_list.append(name)
+#Adding student details as dictionary
+#key= name,value= age and grade
+students_dict[name] = {"age": age, "grade": grade}
+
+
+#Display the sucess/confirmation message
+print(f"Student {name} added successfully!")
+
+#Display the current data
+print("Students list:", students_list)
+print("Students details:", students_dict)
+
+#Serach operation
+#Ask user to search for a student
+search_name = input("Enter the name of the student to search: ")
+
+#Check if student exist in the dictionary
+if search_name in students_dict:
+    print(f"Found: {search_name}, Age: {students_dict[search_name]['age']}, Grade: {students_dict[search_name]['grade']}")
+else:
+    print("Student not found.")
+
+
+#Remove operation
+remove_name = input("Enter the name of the student to remove: ")
+#Check if student exist before removing
+if remove_name in students_dict:
+    #remove from list
+    students_list.remove(remove_name)
+    #remove from dictionary
+    del students_dict[remove_name]
+    print(f"Student {remove_name} removed successfully!")
+else:
+    print("Student not found.")
+
+
+
+#Finally display updated data
+print("Updated Students:", students_list)
+print("Updated Student Details:", students_dict)
